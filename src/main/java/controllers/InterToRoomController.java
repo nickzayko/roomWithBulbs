@@ -44,7 +44,7 @@ public class InterToRoomController {
     }
 
     @ResponseBody
-    @RequestMapping(value = "/updateBulbStatus", produces = "application/json", method = RequestMethod.GET)
+    @RequestMapping(value = "/updateBulbStatus", method = RequestMethod.GET)
     public String updateBulbStatus(@RequestParam(name = "roomNumber") Integer roomNumber,
                                  Model model){
         String statusBulb = bulbService.getStatus(roomNumber);

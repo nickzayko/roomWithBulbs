@@ -27,7 +27,6 @@
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
     <script>
-
         $(document).ready(function () {
             setInterval(updateBulbStatus, 1000);
         });
@@ -36,40 +35,11 @@
             $.ajax({
                 url: "/updateBulbStatus",
                 data: "roomNumber=${roomNumber}",
-                dataType: "json",
-                success: function (json) {
-                    $("#bulb").removeClass().addClass(json);
+                success: function (data) {
+                    $("#bulb").removeClass().addClass(data);
                 }
             })
         }
-
-        //                    if (json = "lamp-off") {
-        //                        $("#bulb").replaceWith("<div class='lamp-off'  id='bulb'></div> ");
-        //                    } else {
-        //                        $("#bulb").replaceWith("<div class='lamp-on'  id='bulb'></div> ");
-        //                    }
-        <%--function updateBulbStatus() {--%>
-            <%--var param = $.ajax({--%>
-                <%--url: "/updateBulbStatus",--%>
-                <%--data: "roomNumber=${roomNumber}",--%>
-                <%--dataType: "json",--%>
-                <%--success: function (json) {--%>
-                    <%--return (json);--%>
-                <%--}--%>
-            <%--}).responseText;--%>
-            <%--if (param === "lamp-off") {--%>
-                <%--$("#bulb").replaceWith("<div class='lamp-off'  id='bulb'></div> ");--%>
-            <%--} else {--%>
-                <%--$("#bulb").replaceWith("<div class='lamp-on'  id='bulb'></div> ");--%>
-            <%--}--%>
-        <%--}--%>
-
-
-//                    $("#bulb").removeClass();
-//                    $("#bulb").addClass(param);
-
-
-
     </script>
 
 </head>
