@@ -8,7 +8,7 @@ import java.util.Map;
 @Repository
 public class DataBaseImitationImpl implements DataBaseImitation {
 
-    Map storeInformation = new HashMap<Integer, String>();
+    private Map storeInformation = new HashMap<Integer, String>();
 
 
     public String getStatus(Integer roomNumber) {

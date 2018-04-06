@@ -15,6 +15,11 @@ public class InterToRoomController {
     @Autowired
     private BulbServiceImpl bulbService;
 
+    @RequestMapping(value = "/interToRoom", method = RequestMethod.GET)
+    public String interToRoom() {
+        return "redirect:/";
+    }
+
     @RequestMapping(value = "/interToRoom", method = RequestMethod.POST)
     public String interToRoom(@RequestParam(name = "roomNumber") Integer roomNumber,
                               Model model){
